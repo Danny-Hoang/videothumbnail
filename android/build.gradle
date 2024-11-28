@@ -33,8 +33,20 @@ android {
         disable 'InvalidPackage'
     }
 
-    // Ensure the Kotlin JVM target is set to 17 to match Java version
-    kotlinOptions {
-        jvmTarget = "17"  // Ensure the JVM target is 17, to match Java's version
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+    // // Ensure the Kotlin JVM target is set to 17 to match Java version
+    // kotlinOptions {
+    //     jvmTarget = "17"  // Ensure the JVM target is 17, to match Java's version
+    // }
+}
+
+// Set Kotlin options outside of the android block for a library project
+apply plugin: 'kotlin-android'
+
+kotlin {
+    // Ensure Kotlin uses the same JVM target as Java
+    jvmTarget = "17"
 }
