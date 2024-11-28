@@ -32,4 +32,9 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+
+    // Ensure the Kotlin JVM target is set to 17 to match Java version
+    kotlinOptions {
+        jvmTarget = "17"  // Ensure the JVM target is 17, to match Java's version
+    }
 }
