@@ -20,7 +20,8 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
-
+// Set Kotlin options outside of the android block for a library project
+apply plugin: 'kotlin-android'
 android {
     namespace 'xyz.justsoft.video_thumbnail'
     compileSdkVersion 33
@@ -43,8 +44,7 @@ android {
     }
 }
 
-// Set Kotlin options outside of the android block for a library project
-apply plugin: 'kotlin-android'
+
 
 // kotlin {
 //     // Ensure Kotlin uses the same JVM target as Java
